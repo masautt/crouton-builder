@@ -9,9 +9,9 @@ import {
 
 const ScriptBar = (props) => {
   return (
-    <div>
+    <div style={{position: "fixed", bottom: "0"}}> 
       <Navbar color="light" light className="text-center">
-        <Nav ><code>sudo crouton -t xfce</code></Nav>
+        <Nav ><code>sudo crouton ...</code></Nav>
       </Navbar>
     </div>
   );
