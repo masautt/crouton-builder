@@ -3,16 +3,18 @@ import {
   Card, CardText, CardBody, CardTitle, Col
 } from 'reactstrap';
 
+const clickableElement = {
+  cursor: "pointer"
+}
+
 const PrebuiltCard = ({name, desc, img}) => {
   return (
-    <Col xl="3">
+    <Col xl="4" style={clickableElement}>
       <Card>
-        <CardBody>
-          <CardTitle>{name}</CardTitle>
-        </CardBody>
+          <CardTitle className="text-center">{name}</CardTitle>
         <img width="100%" src={img} alt={name} />
         <CardBody>
-          <CardText>{desc}</CardText>
+          <CardText><small>{desc}</small></CardText>
         </CardBody>
       </Card>
     </Col>

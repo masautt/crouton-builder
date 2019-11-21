@@ -1,25 +1,26 @@
 import React from 'react';
 import NavBar from "./components/NavBar";
-import ScriptBar from './components/ScriptBar';
-import Customized from './components/Customized';
 import Welcome from "./components/Welcome";
-import { Container, Row, Col } from 'reactstrap';
+import PrebuiltDisplay from "./components/PrebuiltDisplay";
+import { Container, Row, Col, Jumbotron } from 'reactstrap';
 
 function App() {
+
     return (
-        <>
-            <NavBar></NavBar>
+        <div>
+            <NavBar />
             <br></br>
             <Container>
                 <Row>
                     <Col>
-                        <Welcome></Welcome>
+                        <Jumbotron>
+                            <Welcome/>
+                            <PrebuiltDisplay/>
+                        </Jumbotron>
                     </Col>
                 </Row>
             </Container>
-
-            <ScriptBar></ScriptBar>
-        </>
+        </div>
     );
 }
 
