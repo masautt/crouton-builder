@@ -1,3 +1,4 @@
+import React from "react";
 import debianLogo from "../images/debian-logo.png"
 import ubuntuLogo from "../images/ubuntu-logo.png"
 import kaliLogo from "../images/kali-logo.jpeg"
@@ -7,6 +8,8 @@ import lxdeLogo from "../images/lxde-logo.png"
 import kdeLogo from "../images/kde-logo.png"
 import unityLogo from "../images/unity-logo.png"
 import xfceLogo from "../images/xfce-logo.png"
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const options = [
     {
@@ -40,10 +43,10 @@ const options = [
         name: "Audio",
         desc: "Support audio playback via Chromium OS's audio system",
         flag: "audio",
-        type: "essential",
+        type: "essentials",
         reqs: ["core"],
         link: "https://github.com/dnschneid/crouton/wiki/Audio",
-        icon: "",
+        icon: <FontAwesomeIcon icon="volume-up" />,
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/audio",
         tips: [
             "Audio from the chroot will now be forwarded to CRAS (Chromium OS audio server), through an ALSA plugin.",
@@ -54,7 +57,7 @@ const options = [
         name: "Chrome",
         desc: "Google Chrome browser, stable channel",
         flag: "chrome",
-        type: "application",
+        type: "applications",
         link: "https://www.google.com/chrome/",
         icon: "https://www.google.com/chrome/static/images/chrome-logo.svg",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/chrome"
@@ -63,7 +66,7 @@ const options = [
         name: "Chrome Beta Channel",
         desc: "Google Chrome browser, beta channel",
         flag: "chrome-beta",
-        type: "application",
+        type: "applications",
         link: "https://www.google.com/chrome/beta/",
         icon: "https://www.google.com/chrome/static/images/beta/chrome-beta-logo.svg",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/chrome-beta"
@@ -72,7 +75,7 @@ const options = [
         name: "Chrome Dev Channel",
         desc: "Google Chrome browser, dev channel",
         flag: "chrome-dev",
-        type: "application",
+        type: "applications",
         link: "https://www.google.com/chrome/dev/",
         icon: "https://www.google.com/chrome/static/images/dev/chrome-dev-logo.svg",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/chrome-dev"
@@ -81,7 +84,7 @@ const options = [
         name: "Chromium",
         desc: "Chromium browser. Uses the distro's version, which may be old",
         flag: "chromium",
-        type: "application",
+        type: "applications",
         link: "https://www.chromium.org/Home",
         icon: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Chromium_Material_Icon.png",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/chromium"
@@ -90,9 +93,9 @@ const options = [
         name: "CLI Tools",
         desc: "Basic CLI tools such as ssh",
         flag: "cli-extra",
-        type: "essential",
+        type: "essentials",
         reqs: ["core"],
-        link: "https://github.com/dnschneid/crouton/blob/master/targets/cli-extra",
+        icon: <FontAwesomeIcon icon="terminal" />,
         tips: ["You can start a shell in a new VT via the startcli host command: sudo startcli"],
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/cli-extra"
     },
@@ -100,8 +103,8 @@ const options = [
         name: "Core",
         desc: "Performs core system configuration. Most users would want this",
         flag: "core",
-        type: "essential",
-        link: "https://github.com/dnschneid/crouton/blob/master/targets/core",
+        type: "essentials",
+        link: <FontAwesomeIcon icon="microchip" />,
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/core"
     },
     {
@@ -122,6 +125,7 @@ const options = [
         flag: "extension",
         type: "display",
         reqs: ["x11"],
+        icon: <FontAwesomeIcon icon="clipboard" />,
         link: "https://github.com/dnschneid/crouton/wiki/crouton-extension:-websocket-architecture",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/extension",
         tips: ["You must install the Chromium OS extension for integration with crouton to work. The extension is available here: https://goo.gl/OVQOEt"],
@@ -153,7 +157,8 @@ const options = [
         name: "GTK Tools",
         desc: "GTK-based tools including gdebi and a simple browser",
         flag: "gtk-extra",
-        type: "application",
+        icon: <FontAwesomeIcon icon="box" />,
+        type: "applications",
         reqs: ["x11"],
         link: "https://www.gtk.org/",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/gtk-extra"
@@ -184,7 +189,8 @@ const options = [
         name: "Keyboard Support",
         desc: "Adds support for Chromebook keyboard special keys",
         flag: "keyboard",
-        type: "essential",
+        icon: <FontAwesomeIcon icon="keyboard" />,
+        type: "essentials",
         reqs: ["x11"],
         link: "https://github.com/dnschneid/crouton/wiki/Keyboard",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/keyboard"
@@ -194,7 +200,7 @@ const options = [
         desc: "Installs the KODI media player. (Approx. 200MB)",
         size: 200,
         flag: "kodi",
-        type: "application",
+        type: "applications",
         reqs: ["x11"],
         icon: "https://p1.hiclipart.com/preview/645/498/511/clay-os-6-a-macos-icon-kodi-white-square-icon-png-clipart.jpg",
         link: "https://kodi.tv/",
@@ -227,7 +233,8 @@ const options = [
         name: "Touch Support",
         desc: "Touchscreen and limited generic gesture support.",
         flag: "touch",
-        type: "essential",
+        icon: <FontAwesomeIcon icon="tablet-alt" />,
+        type: "essentials",
         reqs: ["x11"],
         link: "https://github.com/dnschneid/crouton/blob/master/targets/touch",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/touch"
@@ -258,7 +265,7 @@ const options = [
         name: "X11",
         desc: "X11 via autodetected backend. Does not install any desktop environment.",
         flag: "x11",
-        type: "essential",
+        type: "display",
         link: "https://en.wikipedia.org/wiki/X_Window_System",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/x11"
     },
@@ -303,6 +310,14 @@ const options = [
         link: "https://www.x.org/wiki/",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/xorg",
         tips: ["You can flip through your running chroot desktops and Chromium OS by hitting Ctrl+Alt+Shift+Back and Ctrl+Alt+Shift+Forward."],
+    },
+    {
+        name: "Encryption",
+        desc: "Have your chroot be encrypted",
+        flag: "-e",
+        icon: <FontAwesomeIcon icon="key" />,
+        type: "param",
+        link: "https://github.com/dnschneid/crouton#with-encryption",
     }
 ]
 

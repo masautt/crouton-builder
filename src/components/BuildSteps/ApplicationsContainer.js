@@ -3,11 +3,9 @@ import options from "../../data/options";
 import DesktopCard from "./DesktopCard";
 import { Container, Row } from "reactstrap";
 
-const ChooseDesktop = () => (
+const ApplicationsContainer = () => (
     <div>
-        <h1 className="text-center">Choose your desktop</h1>
-        <br></br>
-        <Container fluid>
+        <Container fluid style={{width: "50%"}}>
             <Row className="justify-content-md-center">
         {options.filter(option => option.type === "desktop").map(item => {
             return (
@@ -23,4 +21,4 @@ const ChooseDesktop = () => (
     </div>
 )
 
-export default ChooseDesktop;
+export default ApplicationsContainer;

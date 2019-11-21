@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Card } from 'reactstrap';
 
-const DesktopCard = ({ name, desc, img }) => {
+const EssentialsCard = ({ name, desc, img }) => {
     return (
         <Col xl="4" className="my-3">
             <Card style={{borderRadius:"10px"}}>
@@ -12,4 +12,4 @@ const DesktopCard = ({ name, desc, img }) => {
     );
 };
 
-export default DesktopCard;
+export default EssentialsCard;

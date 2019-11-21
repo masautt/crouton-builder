@@ -1,11 +1,11 @@
 import React from 'react';
 import { Navbar, Nav } from 'reactstrap';
 
-const ScriptBar = (props) => {
+const ScriptBar = ({distro, options, name}) => {
   return (
-    <div style={{position: "fixed", bottom: "0"}}> 
+    <div > 
       <Navbar color="light" light className="text-center">
-        <Nav><code>sudo crouton ...</code></Nav>
+        {!distro && !options && !name && <Nav><code>sudo crouton ...</code></Nav>}
       </Navbar>
     </div>
   );
