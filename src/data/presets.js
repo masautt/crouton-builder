@@ -1,22 +1,26 @@
-module.exports =  [
+import ubuntuXenialApps from "../images/ubuntu-xenial-apps.png"
+import ubuntuXenialCli from "../images/ubuntu-xenial-cli.png"
+import ubuntuXenialDesktop from "../images/ubuntu-xenial-desktop.png"
+
+const presets =  [
     {
-        name: "Ubuntu 16.04 - CLI Only",
+        name: "Ubuntu 16.04 Basic CLI",
         desc: "Xenial in the terminal",
         options: ["xenial", "keyboard","extension","core","cli-extra"],
-        img: "https://i.imgur.com/1xJ0bs2.png"
+        img: ubuntuXenialCli
 
     },
     {
-        name: "Ubuntu 16.04 - Desktop Apps",
+        name: "Ubuntu 16.04 Desktop Apps",
         desc: "Xenial with Desktop Apps through Xiwi",
         options: ["xenial", "keyboard","extension","core","cli-extra","audio","xiwi"],
-        img: "https://i.imgur.com/Gff56bd.jpg"
+        img: ubuntuXenialApps
     },
     {
-        name: "Ubuntu 16.04 - Basic Desktop",
+        name: "Ubuntu 16.04 Basic Desktop",
         desc: "Xenial and the Unity Desktop.",
         options: ["xenial", "keyboard","extension","core","cli-extra","audio","xiwi","unity"],
-        img: "https://i.imgur.com/z9X3Akl.png"
+        img: ubuntuXenialDesktop
     },
     {
         name: "Debian 10 - CLI Only",
@@ -43,3 +47,5 @@ module.exports =  [
         img: ""
     }
 ]
+
+export default presets;
