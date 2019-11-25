@@ -1,6 +1,6 @@
 import React from "react";
 import options from "../../data/options";
-import DistroCard from "./DistroCard";
+import DistroOption from "./DistroOption";
 import { Container, Row } from "reactstrap";
 
 const DistroContainer = () => (
@@ -9,11 +9,11 @@ const DistroContainer = () => (
             <Row>
         {options.filter(option => option.type === "distro").map(item => {
             return (
-                <DistroCard
+                <DistroOption
                 name={item.name}
                 img={item.icon}
                 desc={item.desc}>
-            </DistroCard>
+            </DistroOption>
             )
         })}
         </Row>

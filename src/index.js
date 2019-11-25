@@ -5,9 +5,9 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTerminal, faMicrochip, faKeyboard, faKey, faTabletAlt, faVolumeUp, faClipboard, faBox} from '@fortawesome/free-solid-svg-icons'
+import { faTerminal, faMicrochip, faArrowRight, faArrowLeft, faKeyboard, faKey, faTabletAlt, faVolumeUp, faClipboard} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faTerminal, faMicrochip, faKeyboard, faKey, faTabletAlt, faVolumeUp, faClipboard, faBox);
+library.add(faTerminal, faMicrochip, faKeyboard, faKey, faTabletAlt, faArrowLeft, faArrowRight,  faVolumeUp, faClipboard);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

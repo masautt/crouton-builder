@@ -1,6 +1,6 @@
 import React from "react";
 import options from "../../data/options";
-import DesktopCard from "./DesktopCard";
+import DesktopOption from "./DesktopOption";
 import { Container, Row } from "reactstrap";
 
 const DesktopContainer = () => (
@@ -9,11 +9,11 @@ const DesktopContainer = () => (
             <Row className="justify-content-md-center">
         {options.filter(option => option.type === "desktop").map(item => {
             return (
-                <DesktopCard
+                <DesktopOption
                 name={item.name}
                 img={item.icon}
                 desc={item.desc}>
-            </DesktopCard>
+            </DesktopOption>
             )
         })}
         </Row>

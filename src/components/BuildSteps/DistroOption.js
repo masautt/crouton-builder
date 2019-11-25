@@ -1,15 +1,16 @@
 import React from 'react';
 import { Col, Card } from 'reactstrap';
 
-const DesktopCard = ({ name, desc, img }) => {
+const DistroOption = ({ name, desc, img }) => {
     return (
-        <Col xl="4" className="my-3">
+        <Col xl="4">
             <Card style={{borderRadius:"10px"}}>
                 <img src={img} alt={name} width="100%" style={{borderRadius:"10px"}}></img>
             </Card>
-            <h6 className="text-center mt-2" >{name}</h6>
+            <br></br>
+            <h2 className="text-center" >{name}</h2>
         </Col>
     );
 };
 
-export default DesktopCard;
+export default DistroOption;
