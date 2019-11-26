@@ -4,7 +4,7 @@ import { Col, Card } from 'reactstrap';
 const PresetCard = ({ name, desc, img }) => {
     return (
         <Col xl="4">
-            <Card style={clickableElement}>
+            <Card style={clickableElement} className="my-3">
                 <img src={img} alt={name} style={backgroundImg}></img>
                 <div style={titleContainer}>
                     <br></br>

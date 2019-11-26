@@ -16,8 +16,9 @@ import kodiLogo from "../images/kodi-logo.png"
 
 const options = [
     {
-        name: "Debian",
+        name: "Debian 10",
         desc: "",
+        size: 650,
         flag: "debian",
         type: "distro",
         link: "https://github.com/dnschneid/crouton/wiki/Debian",
@@ -25,7 +26,7 @@ const options = [
         bash: "https://github.com/dnschneid/crouton/tree/master/installer/debian",
     },
     {
-        name: "Ubuntu",
+        name: "Ubuntu 16.04",
         desc: "",
         flag: "ubuntu",
         type: "distro",
@@ -46,7 +47,7 @@ const options = [
         name: "Audio",
         desc: "Support audio playback via Chromium OS's audio system",
         flag: "audio",
-        type: "essential",
+        type: "essentials",
         reqs: ["core"],
         link: "https://github.com/dnschneid/crouton/wiki/Audio",
         icon: "volume-up",
@@ -60,25 +61,47 @@ const options = [
         name: "Chrome",
         desc: "Google Chrome browser, stable channel",
         flag: "chrome",
-        type: "application",
+        type: "applications",
         link: "https://www.google.com/chrome/",
         icon: chromeLogo,
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/chrome"
     },
     {
+        name: "Kodi",
+        desc: "Installs the KODI media player. (Approx. 200MB)",
+        size: 200,
+        flag: "kodi",
+        type: "applications",
+        reqs: ["x11"],
+        icon: kodiLogo,
+        link: "https://kodi.tv/",
+        bash: "https://github.com/dnschneid/crouton/blob/master/targets/kodi",
+        tips: ["You can start KODI via the startkodi host command: sudo startkodi"],
+    },
+    {
         name: "Chrome Beta Channel",
         desc: "Google Chrome browser, beta channel",
         flag: "chrome-beta",
-        type: "application",
+        type: "applications",
         link: "https://www.google.com/chrome/beta/",
         icon: chromeBetaLogo,
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/chrome-beta"
     },
     {
+        name: "GTK Tools",
+        desc: "GTK-based tools including gdebi and a simple browser",
+        flag: "gtk-extra",
+        icon: gtkLogo,
+        type: "applications",
+        reqs: ["x11"],
+        link: "https://www.gtk.org/",
+        bash: "https://github.com/dnschneid/crouton/blob/master/targets/gtk-extra"
+    },
+    {
         name: "Chrome Dev Channel",
         desc: "Google Chrome browser, dev channel",
         flag: "chrome-dev",
-        type: "application",
+        type: "applications",
         link: "https://www.google.com/chrome/dev/",
         icon: chromeDevLogo,
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/chrome-dev"
@@ -87,7 +110,7 @@ const options = [
         name: "Chromium",
         desc: "Chromium browser. Uses the distro's version, which may be old",
         flag: "chromium",
-        type: "application",
+        type: "applications",
         link: "https://www.chromium.org/Home",
         icon: chromiumLogo,
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/chromium"
@@ -96,7 +119,7 @@ const options = [
         name: "CLI Tools",
         desc: "Basic CLI tools such as ssh",
         flag: "cli-extra",
-        type: "essential",
+        type: "essentials",
         reqs: ["core"],
         icon: "terminal",
         tips: ["You can start a shell in a new VT via the startcli host command: sudo startcli"],
@@ -104,9 +127,9 @@ const options = [
     },
     {
         name: "Core",
-        desc: "Performs core system configuration. Most users would want this",
+        desc: "Performs core system configuration.",
         flag: "core",
-        type: "essential",
+        type: "essentials",
         icon: "microchip",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/core"
     },
@@ -126,7 +149,7 @@ const options = [
         name: "Extension",
         desc: "Clipboard synchronization and URL handling with Chromium OS",
         flag: "extension",
-        type: "essential",
+        type: "essentials",
         reqs: ["x11"],
         icon: "clipboard",
         link: "https://github.com/dnschneid/crouton/wiki/crouton-extension:-websocket-architecture",
@@ -156,16 +179,7 @@ const options = [
         link: "https://www.gnome.org/",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/gnome-desktop"
     },
-    {
-        name: "GTK Tools",
-        desc: "GTK-based tools including gdebi and a simple browser",
-        flag: "gtk-extra",
-        icon: gtkLogo,
-        type: "application",
-        reqs: ["x11"],
-        link: "https://www.gtk.org/",
-        bash: "https://github.com/dnschneid/crouton/blob/master/targets/gtk-extra"
-    },
+
     {
         name: "KDE",
         desc: "Installs a minimal KDE desktop environment. (Approx. 600MB)",
@@ -193,22 +207,10 @@ const options = [
         desc: "Adds support for Chromebook keyboard special keys",
         flag: "keyboard",
         icon: "keyboard",
-        type: "essential",
+        type: "essentials",
         reqs: ["x11"],
         link: "https://github.com/dnschneid/crouton/wiki/Keyboard",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/keyboard"
-    },
-    {
-        name: "Kodi",
-        desc: "Installs the KODI media player. (Approx. 200MB)",
-        size: 200,
-        flag: "kodi",
-        type: "application",
-        reqs: ["x11"],
-        icon: kodiLogo,
-        link: "https://kodi.tv/",
-        bash: "https://github.com/dnschneid/crouton/blob/master/targets/kodi",
-        tips: ["You can start KODI via the startkodi host command: sudo startkodi"],
     },
     {
         name: "LXDE",
@@ -237,7 +239,7 @@ const options = [
         desc: "Touchscreen and limited generic gesture support.",
         flag: "touch",
         icon: "tablet-alt",
-        type: "essential",
+        type: "essentials",
         reqs: ["x11"],
         link: "https://github.com/dnschneid/crouton/blob/master/targets/touch",
         bash: "https://github.com/dnschneid/crouton/blob/master/targets/touch"

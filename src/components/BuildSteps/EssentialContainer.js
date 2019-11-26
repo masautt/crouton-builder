@@ -1,24 +1,28 @@
 import React from "react";
 import options from "../../data/options";
 import EssentialOption from "./EssentialOption";
-import { Container, Row } from "reactstrap";
+import { Container, Rowl, Form, FormGroup, Row } from "reactstrap";
 
 const EssentialContainer = () => (
-    <div>
-        <Container fluid style={{ width: "50%" }}>
-            <Row className="justify-content-md-center">
-                {options.filter(option => option.type === "").map(item => {
-                    return (
-                        <EssentialOption
-                            name={item.name}
-                            img={item.icon}
-                            desc={item.desc}>
-                        </EssentialOption>
-                    )
-                })}
-            </Row>
-        </Container>
-    </div>
+    <Form style={{height: "100%"}}>
+        <FormGroup check className="border" style={{height: "100%"}}>
+            <Container fluid style={{width: "80%", height: "100%"}}>
+                <Row>
+                    {options.filter(option => option.type === "essentials").map(item => {
+                        return (
+                            <EssentialOption
+                                name={item.name}
+                                img={item.icon}
+                                desc={item.desc}>
+                            </EssentialOption>
+                        )
+                    })}
+                </Row>
+            </Container>
+        </FormGroup>
+    </Form>
+
 )
+
 
 export default EssentialContainer;

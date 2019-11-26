@@ -1,19 +1,29 @@
 import React from 'react';
-import { Col, Card } from 'reactstrap';
+import { Col, Card, Label, Input, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const EssentialOption = ({ name, desc, img }) => {
     return (
-        <Col xl="4" className="my-3 text-center">
-            <Card style={{borderRadius:"10px", height: "9rem"}} >
-                <br></br>
-                <span className="inline-block text-center mb-4 p-2">
-                    <FontAwesomeIcon icon={img} size="5x"/>
-                </span>
+        <Col xs="6">
+            <Label check>
+                <Input type="checkbox" />{' '}
+            </Label>
+            <Card>
+                <Row>
+                    <Col xs="3">
+                        <FontAwesomeIcon icon={img} size="4x" className="m-3"/>
+                    </Col>
+                    <Col xs="9">
+                        <div className="m-2">
+                            <h4>{name}</h4>
+                            <h6>{desc}</h6>    
+                        </div>
+                    </Col>
+                </Row>
             </Card>
-            <h6 className="text-center">{name}</h6>
         </Col>
-    );
-};
+    )
+}
+
 
 export default EssentialOption;
