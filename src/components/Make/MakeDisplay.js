@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import ScriptBar from "./ScriptBar";
-import DesktopContainer from "./BuildSteps/DesktopContainer";
-import DistroContainer from "./BuildSteps/DistroContainer";
-import ApplicationContainer from "./BuildSteps/ApplicationContainer";
-import EssentialContainer from "./BuildSteps/EssentialContainer";
+import DesktopContainer from "./DesktopContainer";
+import DistroContainer from "./DistroContainer";
+import ApplicationContainer from "./ApplicationContainer";
+import EssentialContainer from "./EssentialContainer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, ColCenter, ColLeft, ColRight, Button } from "../MyBootstrap";
 
 
 const PresetDisplay = () => {
@@ -26,34 +26,34 @@ const PresetDisplay = () => {
         <div>
             <Container>
                 <Row>
-                    <Col className="text-left" >
+                    <ColLeft>
                         {activeStep === 0 ?
-                            <Button color="dark" onClick={goHome}>
+                            <Button onClick={goHome}>
                                 <FontAwesomeIcon icon={"home"} size="lg" />
                                 {" "}{" "}
                                 Home
                             </Button>
                             :
-                            <Button color="dark" onClick={prevStep}>
+                            <Button onClick={prevStep}>
                                 <FontAwesomeIcon icon={"arrow-left"} size="lg" />
                                 {" "}{" "}
                                 Back
                             </Button>
                         }
-                    </Col>
-                    <Col className="text-center"><h1>Choose your {steps[activeStep]}</h1></Col>
-                    <Col className="text-right" >
+                    </ColLeft>
+                    <ColCenter><h1>Choose your {steps[activeStep]}</h1></ColCenter>
+                    <ColRight>
                         {activeStep !== steps.length &&
-                            <Button color="dark" onClick={nextStep}>
+                            <Button onClick={nextStep}>
                                 Next
                                 {" "}{" "}
                                 <FontAwesomeIcon icon={"arrow-right"} size="lg" />
                             </Button>}
-                    </Col>
+                    </ColRight>
                 </Row>
             </Container>
             <br></br>
-            <div style={{ height: "450px" }}>
+            <div style={{ height: "25rem" }}>
                 {steps[activeStep] === "desktop" && <DesktopContainer />}
                 {steps[activeStep] === "distro" && <DistroContainer />}
                 {steps[activeStep] === "applications" && <ApplicationContainer />}

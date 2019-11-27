@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import NavBar from "./components/NavBar";
-import WelcomeBanner from "./components/WelcomeBanner";
-import PresetDisplay from "./components/Presets/PresetDisplay";
-import BuildDisplay from "./components/BuildDisplay";
+import NavBar from "./components/Home/NavBar";
+import PresetDisplay from "./components/Preset/PresetDisplay";
+import BuildDisplay from "./components/Make/MakeDisplay";
 
-import { Container, Row, Col, Jumbotron, Button } from 'reactstrap';
+import { Row, Col, Container, Jumbotron, Button, Centered } from "./components/MyBootstrap";
 
-
-
-function App() {
-    const [activeMenu, setActiveMenu] = useState("main")
+const App = () => {
+    const [activeMenu, setActiveMenu] = useState("home")
 
     return (
         <div>
@@ -18,17 +15,17 @@ function App() {
             <Container>
                 <Row>
                     <Col>
-                        {activeMenu === "main" && <Jumbotron>
+                        {activeMenu === "home" && <Jumbotron>
                             <WelcomeBanner />
+                            <br />
+                            <Centered>
+                                <Button onClick={() => setActiveMenu("build")}><h2>Start</h2></Button>
+                            </Centered>
                             <br></br>
-                            <div className="d-flex align-items-center justify-content-center">
-                                <Button color="dark" onClick={() => setActiveMenu("build")}><h2>Start</h2></Button>
-                            </div>
-                            <br></br>
-                            <PresetDisplay/>
+                            <PresetDisplay />
                         </Jumbotron>}
-                        {activeMenu === "presets" && <PresetsMenu />}
-                        {activeMenu === "build" && <BuildMenu />}
+                        {activeMenu === "presets" && <Jumbotron><PresetDisplay /></Jumbotron>}
+                        {activeMenu === "build" && <Jumbotron><BuildDisplay /></Jumbotron>}
                     </Col>
                 </Row>
             </Container>
@@ -36,16 +33,13 @@ function App() {
     );
 }
 
-const PresetsMenu = () => (
-    <Jumbotron>
-        <PresetDisplay />
-    </Jumbotron>
-)
-
-const BuildMenu = () => (
-    <Jumbotron>
-        <BuildDisplay />
-    </Jumbotron>
+const WelcomeBanner = () => (
+    <div>
+        <h1 className="display-3 text-center">Crouton-Builder <small>v1.2</small></h1>
+        <p className="lead text-center">A UI for building chroots</p>
+        <hr className="my-2" />
+        <p className="lead"></p>
+    </div>
 )
 
 export default App;

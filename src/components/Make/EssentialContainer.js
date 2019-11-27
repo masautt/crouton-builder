@@ -1,7 +1,7 @@
 import React from "react";
 import options from "../../data/options";
 import EssentialOption from "./EssentialOption";
-import { Container, Rowl, Form, FormGroup, Row } from "reactstrap";
+import { Container, Form, FormGroup, Row } from "reactstrap";
 
 const EssentialContainer = () => (
     <Form style={{height: "100%"}}>

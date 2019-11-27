@@ -1,6 +1,6 @@
 import debianLogo from "../images/debian-logo.png"
 import ubuntuLogo from "../images/ubuntu-logo.png"
-import kaliLogo from "../images/kali-logo.jpeg"
+import kaliLogo from "../images/kali-logo.png"
 import enlightenmentLogo from "../images/enlightenment-logo.png"
 import gnomeLogo from "../images/gnome-logo.png"
 import lxdeLogo from "../images/lxde-logo.png"
@@ -13,6 +13,7 @@ import chromeBetaLogo from "../images/chrome-beta-logo.svg"
 import chromiumLogo from "../images/chromium-logo.svg"
 import gtkLogo from "../images/gtk-logo.png"
 import kodiLogo from "../images/kodi-logo.png"
+import xiwiLogo from "../images/xiwi-logo.png"
 
 const options = [
     {

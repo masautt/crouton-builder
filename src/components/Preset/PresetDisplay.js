@@ -5,7 +5,7 @@ import presets from "../../data/presets";
 
 
 const PresetDisplay = () => {
-    const [limit, setLimit] = useState(3);
+    const [limit, setLimit] = useState(4);
     return (
         <p className="lead">
             <br></br>
@@ -16,9 +16,9 @@ const PresetDisplay = () => {
                 <Row>
                     {presets.slice(0, limit).map(item =>
                         <PresetCard
-                            name={item.name}
-                            img={item.img}
-                            desc={item.desc}>
+                            title={item.title}
+                            subtitle={item.subtitle}
+                            imgs={item.imgs}>
                         </PresetCard>
                     )}
                 </Row>
